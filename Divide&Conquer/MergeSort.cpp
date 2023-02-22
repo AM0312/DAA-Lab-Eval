@@ -1,3 +1,5 @@
+// Time: θ(NlogN)
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -26,8 +28,8 @@ void mergeSort(vector<int> &arr,int s,int e){
     merge(arr,s,e);
 }
 
-int main(){
-    vector<int> arr{11,5,2,1,7,6,4};
-    mergeSort(arr,0,arr.size()-1);
-    for(auto x:arr) cout<<x<<" ";
-}
+// int main(){
+//     vector<int> arr{11,5,2,1,7,6,4};
+//     mergeSort(arr,0,arr.size()-1);
+//     for(auto x:arr) cout<<x<<" ";
+// }

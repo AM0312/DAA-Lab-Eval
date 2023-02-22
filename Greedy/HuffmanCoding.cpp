@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class MinHeapNode {
+class treeNode{
 public:
 	char data;
 	int freq;
-	MinHeapNode *left, *right;
-	MinHeapNode(char data,int freq){
+	treeNode *left, *right;
+	treeNode(char data,int freq){
 		left = right = NULL;
 		this->data = data;
 		this->freq = freq;
@@ -14,12 +14,12 @@ public:
 };
 
 struct compare {
-	bool operator()(MinHeapNode* l, MinHeapNode* r){
+	bool operator()(treeNode* l, treeNode* r){
 		return (l->freq > r->freq);
 	}
 };
 
-void printCodes(struct MinHeapNode* root, string str){
+void printCodes(struct treeNode* root, string str){
 	if (!root) return;
 	if (root->data != '$') cout << root->data << ": " << str << "\n";
 	printCodes(root->left, str + "0");
@@ -27,10 +27,10 @@ void printCodes(struct MinHeapNode* root, string str){
 }
 
 void HuffmanCodes(char data[], int freq[], int size){
-	MinHeapNode *left, *right, *top;
-	priority_queue<MinHeapNode*, vector<MinHeapNode*>, compare> minHeap;
+	treeNode *left, *right, *top;
+	priority_queue<treeNode*, vector<treeNode*>, compare> minHeap;
 
-	for (int i = 0; i < size; ++i) minHeap.push(new MinHeapNode(data[i], freq[i]));
+	for (int i = 0; i < size; ++i) minHeap.push(new treeNode(data[i], freq[i]));
 	while (minHeap.size() != 1){
 		left = minHeap.top();
 		minHeap.pop();
@@ -38,7 +38,7 @@ void HuffmanCodes(char data[], int freq[], int size){
 		right = minHeap.top();
 		minHeap.pop();
 
-		top = new MinHeapNode('$', left->freq + right->freq);
+		top = new treeNode('$', left->freq + right->freq);
 		top->left = left;
 		top->right = right;
 		minHeap.push(top);
