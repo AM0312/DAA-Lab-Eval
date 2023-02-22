@@ -1,3 +1,5 @@
+// Time- O(amt)
+
 #include<bits/stdc++.h>
 using namespace std;
 

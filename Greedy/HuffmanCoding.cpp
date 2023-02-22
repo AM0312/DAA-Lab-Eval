@@ -1,3 +1,5 @@
+// Time- O(NlogN)
+
 #include <bits/stdc++.h>
 using namespace std;
 
