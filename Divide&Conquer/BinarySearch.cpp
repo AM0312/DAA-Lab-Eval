@@ -1,4 +1,4 @@
-// Time: O(NlogN)
+// Time: O(logN)
 
 #include<bits/stdc++.h>
 using namespace std;
